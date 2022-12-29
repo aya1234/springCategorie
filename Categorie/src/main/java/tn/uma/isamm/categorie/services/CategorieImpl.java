@@ -26,12 +26,7 @@ public class CategorieImpl implements ICategorie{
 	@Override
 	public Categorie addCategorie(Categorie c) {
 		// TODO Auto-generated method stub
-		try {
-            return categorieRepository.save(c);
-        } catch (Exception E) {
-            System.out.println("Erreur  : " + E);
-        }
-        return c;
+        return categorieRepository.save(c);
 	}
 
 	@Override

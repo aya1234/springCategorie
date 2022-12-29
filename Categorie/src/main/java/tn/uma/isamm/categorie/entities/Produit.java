@@ -8,6 +8,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
@@ -22,8 +24,9 @@ public class Produit implements Serializable{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long idProduit;
 	
-	@ManyToOne
-	private Categorie categorie;
+	private String nomProduit;
 	
-
+	@ManyToOne
+	@JsonIgnore
+	private Categorie categorie;
 }
